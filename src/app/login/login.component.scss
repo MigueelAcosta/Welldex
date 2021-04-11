@@ -1,0 +1,43 @@
+.login-container{
+    height: 100vh;
+    flex-wrap: unset !important;
+}
+
+.login-image{
+    background-color: #003061;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form-fields{
+    display: grid;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.login-field{
+    padding: 15px 5px 15px 30px;
+}
+
+.pws-forgot{
+    color: blue;
+    cursor: pointer;
+}
+
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary{
+    background-color: #4290f5;
+}
+
+.login-actions{
+    padding-top: 90px;
+    text-align: center;
+}
