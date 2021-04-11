@@ -17,14 +17,16 @@
                         <form form [formGroup]='form' (ngSubmit)='onSend()'>
                             <div class="login-field">
                             <mat-form-field class="full-width">
-                                <mat-label>Usuario </mat-label>
+                                <mat-label *ngIf="!user.invalid">Usuario </mat-label>
+                                <mat-label *ngIf="user.invalid && (user.dirty || user.touched)">Usuario *Requerido </mat-label>
                                 <input matInput placeholder="Nombre" formControlName="user">
                             </mat-form-field>
                         </div>
                         <div class="login-field">
                             <mat-form-field class="full-width">
-                                <mat-label>Contraseña </mat-label>
-                                <input matInput type="password" placeholder="Contraseña" formControlName="password">
+                                <mat-label *ngIf="!password.invalid">Contraseña </mat-label>
+                                <mat-label *ngIf="password.invalid && (password.dirty || password.touched)">Contraseña *Requerido </mat-label>
+                                <input matInput type="password" placeholder="Contraseña" formControlName="password" >
                             </mat-form-field>
                         </div>
                         <div class="d-flex" style="padding-left: 30px;">
