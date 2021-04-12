@@ -14,6 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpService } from './service/http-service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule
   ],
   providers: [
     //HttpClient,

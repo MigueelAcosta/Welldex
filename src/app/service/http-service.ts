@@ -9,6 +9,10 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   login(data):Observable<any>{
-    return this.http.post(this.URL + 'login.php', JSON.stringify(data));
+    return this.http.post(this.URL + 'login.php', data);
+  }
+
+  sendData(data):Observable<any>{
+    return this.http.post(this.URL + 'formulario.php', data);
   }
 }

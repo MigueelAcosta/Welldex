@@ -1,1 +1,82 @@
-<p>form works!</p>
+<div class="container">
+    <div class="form-container">
+        <div class="file-form">
+            <img src="https://welldex-nte.com.mx/Resources/images/logom.png" alt="" width="90%">
+            <div class="file-zone">
+                <h2 class="file-zone-title">Documento</h2>
+                <input type="file" name="" id="" #file style="display: none;" accept="image/png, image/jpeg,application/pdf" (change)="onFilePicked($event.target.files)">
+                <button class="m-4" mat-raised-button (click)="file.click()">Seleccionar documento</button>
+                <p style="color: white;">*El documento debe png, jpeg o pdf</p>
+                <div class="container file-container">
+                    <img *ngIf="formFile != null" src="https://img.icons8.com/ultraviolet/40/000000/file.png" width="70px" />
+                    <p *ngIf="formFile != null">{{formFile.name}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-body">
+            <form form [formGroup]='form' (ngSubmit)='onSend(formDirective)' #formDirective="ngForm"  class="form-controls-container">
+                <div class="form-controls">
+                    <p class="mr-auto form-label" *ngIf="!sended || controls.name.valid">Nombre</p>
+                    <p class="mr-auto form-label invalid-form-control" *ngIf="controls.name.invalid && sended">Nombre</p>
+                    <input class="form-input" [ngStyle]="{'border': (controls.name.invalid && sended) ? '1px solid red' : ''}" type="text"  formControlName="name">
+                </div>
+                <div class="form-controls">
+                    <p class="mr-auto form-label" *ngIf="!sended || controls.date.valid">Fecha de nacimiento</p>
+                    <p class="mr-auto form-label invalid-form-control" *ngIf="controls.date.invalid && sended">Fecha de nacimiento</p>
+                    <div class="">
+                        <mat-form-field class="form-input" [ngStyle]="{'border': (controls.date.invalid && sended) ? '1px solid red' : ''}">
+                            <input matInput [matDatepicker]="picker" formControlName="date">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                        <p *ngIf="controls.date.errors && controls.date.errors.matDatepickerParse" class="invalid-form-control">Fecha invalida</p>
+                    </div>
+                    
+                </div>
+                <div class="form-controls">
+                    <p class="mr-auto form-label" *ngIf="!sended || controls.phone.valid">Teléfono</p>
+                    <p class="mr-auto form-label invalid-form-control" *ngIf="controls.phone.invalid && sended">Teléfono</p>
+                    <div class="">
+                        <input class="form-input" [ngStyle]="{'border': (controls.phone.invalid && sended) ? '1px solid red' : ''}" type="text"  formControlName="phone"> 
+                        <p *ngIf="controls.phone.errors && controls.phone.errors.pattern" class="invalid-form-control">formato invalido</p>
+                    </div>
+                </div>
+                <div class="form-controls">
+                    <p class="mr-auto form-label" *ngIf="!sended || controls.bloodType.valid">Tipo de sangre</p>
+                    <p class="mr-auto form-label invalid-form-control" *ngIf="controls.bloodType.invalid && sended">Tipo de sangre</p>
+                    <input class="form-input" [ngStyle]="{'border': (controls.bloodType.invalid && sended) ? '1px solid red' : ''}" type="text"  formControlName="bloodType">
+                </div>
+                <div class="form-controls">
+                    <p class="mr-auto form-label" *ngIf="!sended || controls.sex.valid">Sexo</p>
+                    <p class="mr-auto form-label invalid-form-control" *ngIf="controls.sex.invalid && sended">Sexo</p>
+                    <mat-radio-group formControlName="sex">
+                        <mat-radio-button class="form-radio" value="Hombre">Hombre</mat-radio-button>
+                        <mat-radio-button class="form-radio" value="Mujer">Mujer</mat-radio-button>
+                        <mat-radio-button class="form-radio" value="Otro">Otro</mat-radio-button>
+                      </mat-radio-group>
+                </div>
+                <div class="form-controls">
+                    <p class="mr-auto form-label" *ngIf="!sended || controls.country.valid">Pais</p>
+                    <p class="mr-auto form-label invalid-form-control" *ngIf="controls.country.invalid && sended">Pais</p>
+                    <select class="form-input" [ngStyle]="{'border': (controls.country.invalid && sended) ? '1px solid red' : ''}" formControlName="country">
+                        <option *ngFor="let pais of paises.countries" value="{{pais.name}}">{{pais.name}}</option>
+                    </select>
+                </div>
+                <div class="form-controls">
+                    <p class="mr-auto form-label" *ngIf="!sended || controls.city.valid">Ciudad</p>
+                    <p class="mr-auto form-label invalid-form-control" *ngIf="controls.city.invalid && sended">Ciudad</p>
+                    <input class="form-input" [ngStyle]="{'border': (controls.city.invalid && sended) ? '1px solid red' : ''}" type="text"  formControlName="city">
+                </div>
+
+                <p class="invalid-form-control ml-auto" style="padding-right:25px" *ngIf="form.invalid && sended">Hay campos sin completar</p>
+
+                <div class="d-flex form-actions mt-auto">
+                    <div class="form-controls ml-auto ">
+                        <button mat-raised-button type="button" (click)="resetForm(formDirective)">Limpiar</button>
+                        <button mat-raised-button type="submit" class="form-submit-button">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

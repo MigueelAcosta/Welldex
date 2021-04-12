@@ -1,0 +1,91 @@
+.container{
+    padding-top: 40px;
+}
+
+.form-container{
+    display: flex;
+    padding: 35px;
+    background: rgb(204,133,1);
+    background: radial-gradient(circle, rgba(204,133,1,1) 0%, rgba(255,128,0,1) 55%, rgba(255,129,0,1) 80%, rgba(255,149,0,1) 100%);
+    border-radius: 20px; 
+    height: 85vh;
+}
+
+.form-container > div{
+    flex: 1;
+}
+
+.file-form{
+    text-align: center;
+}
+
+.form-body{
+    background-color: #fff;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.form-controls-container{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.file-zone{
+    padding-top: 50px;
+}
+
+.file-zone-title{
+    font-weight: bold;
+    color: #003061;
+}
+
+.container.file-container{
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    width: 55%;
+    height: 200px;
+}
+
+.form-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 40px;
+    
+}
+
+.form-input{
+    border-radius: 5px;
+    background-color: #F2F2F2;
+    width: 260px;
+    height: 47px;
+    border: 1px solid black;
+}
+
+.form-label {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: unset;
+    padding-top: 10px;
+}
+
+.form-radio{
+    padding: 0px 10px;
+}
+
+.form-submit-button{
+    background-color: #003061;
+    color: #fff;
+    margin-left: 25px;
+}
+
+.form-body .form-actions{
+    flex: 1 1 auto;
+}
+
+.invalid-form-control{
+    color: red;
+}
