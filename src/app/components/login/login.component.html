@@ -18,18 +18,16 @@
                             <div class="login-field">
                                 <mat-form-field class="full-width">
                                     <mat-label *ngIf="!user.invalid">Usuario </mat-label>
-                                    <mat-label *ngIf="user.invalid && (user.dirty || user.touched)">Usuario *Requerido
-                                    </mat-label>
                                     <input matInput placeholder="Nombre" formControlName="user" maxlength="20">
                                 </mat-form-field>
+                                <p *ngIf="user.invalid && (user.dirty || user.touched)" style="color: red;"> Requerido</p>
                             </div>
                             <div class="login-field">
                                 <mat-form-field class="full-width">
                                     <mat-label *ngIf="!password.invalid">Contraseña </mat-label>
-                                    <mat-label *ngIf="password.invalid && (password.dirty || password.touched)">
-                                        Contraseña *Requerido </mat-label>
                                     <input matInput type="password" placeholder="Contraseña" formControlName="password" maxlength="20">
                                 </mat-form-field>
+                                <p *ngIf="password.invalid && (password.dirty || password.touched)" style="color: red;">Requerido</p>
                             </div>
                             <div class="d-flex" style="padding-left: 30px;">
                                 <div class="mr-auto">
