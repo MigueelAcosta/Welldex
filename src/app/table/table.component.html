@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="file-upload-container">
+        <div class="title-container">
+            <h1>Control de personal</h1>
+        </div>
+        <div class="file-container">
+            <div class="file-box file-upload mr-auto">
+                <h4>Nuevo registro</h4>
+                <div style="padding: 10px 0px;">
+                    <input type="file" #input accept="text/plain" (change)="onUploadFile($event.target.files)"
+                        multiple="false" style="display: none;">
+                    <button mat-raised-button (click)="input.click()"> Seleccionar archivo</button>
+                </div>
+                <p>El documento deber tener extensión .txt</p>
+            </div>
+            <div class="file-box file-load">
+                <div class="file-preview">
+                    <img *ngIf="loadFile !=null" src="https://img.icons8.com/ultraviolet/40/000000/file.png" alt="">
+                    <p *ngIf="loadFile !=null">{{loadFile.name}}</p>
+                    <p *ngIf="loadFile == null">Sin archivo</p>
+                </div>
+                <div class="">
+                    <button (click)="onLoadFile()" mat-raised-button> Cargar</button>
+                </div>
+            </div>
+        </div>
+        <div class="table-container">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+
+                <ng-container matColumnDef="nombre">
+                    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Nombre}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="puesto">
+                    <th mat-header-cell *matHeaderCellDef> Puesto </th>
+                    <td mat-cell *matCellDef="let element"> {{element.puesto}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="area">
+                    <th mat-header-cell *matHeaderCellDef> Área </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Area}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="antiguedad">
+                    <th mat-header-cell *matHeaderCellDef> Antigüedad </th>
+                    <td mat-cell *matCellDef="let element"> {{element.antiguedad}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nss">
+                    <th mat-header-cell *matHeaderCellDef> NSS </th>
+                    <td mat-cell *matCellDef="let element"> {{element.NSS}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="numeroCol">
+                    <th mat-header-cell *matHeaderCellDef> NumeroCol </th>
+                    <td mat-cell *matCellDef="let element"> {{element.numeroCol}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="carnet">
+                    <th mat-header-cell *matHeaderCellDef> Carnet </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Carnet}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="usuario">
+                    <th mat-header-cell *matHeaderCellDef> Usuario </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Usuario}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="telefono">
+                    <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+                    <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="correo">
+                    <th mat-header-cell *matHeaderCellDef> Correo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+</div>

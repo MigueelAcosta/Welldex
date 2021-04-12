@@ -20,7 +20,7 @@
                                     <mat-label *ngIf="!user.invalid">Usuario </mat-label>
                                     <mat-label *ngIf="user.invalid && (user.dirty || user.touched)">Usuario *Requerido
                                     </mat-label>
-                                    <input matInput placeholder="Nombre" formControlName="user">
+                                    <input matInput placeholder="Nombre" formControlName="user" maxlength="20">
                                 </mat-form-field>
                             </div>
                             <div class="login-field">
@@ -28,7 +28,7 @@
                                     <mat-label *ngIf="!password.invalid">Contraseña </mat-label>
                                     <mat-label *ngIf="password.invalid && (password.dirty || password.touched)">
                                         Contraseña *Requerido </mat-label>
-                                    <input matInput type="password" placeholder="Contraseña" formControlName="password">
+                                    <input matInput type="password" placeholder="Contraseña" formControlName="password" maxlength="20">
                                 </mat-form-field>
                             </div>
                             <div class="d-flex" style="padding-left: 30px;">

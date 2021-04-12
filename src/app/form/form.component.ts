@@ -219,8 +219,20 @@ export class FormComponent implements OnInit {
   }
 
   onFilePicked(file){
-    this.formFile = file[0];
-    this.cdr.detectChanges();
+
+    if(this.checkFileType(file[0].name) == 'pdf' 
+    || this.checkFileType(file[0].name) == 'png' 
+    || this.checkFileType(file[0].name) == 'jpeg'
+    || this.checkFileType(file[0].name) == 'jpg'){
+      this.formFile = file[0];
+      this.cdr.detectChanges();
+    }else{
+      alert('Archivo invalido. Intenta con uno diferente')
+    }
+  }
+
+  checkFileType(filename):string{
+    return filename.split('.').pop();
   }
 
   prepareData():UserRegisterModel{
@@ -248,6 +260,7 @@ export class FormComponent implements OnInit {
       this.sended = false;
       formDirective.resetForm();
       this.form.reset();
+      this.formFile = null;
     })
   }
 

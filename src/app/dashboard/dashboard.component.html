@@ -7,6 +7,12 @@
     <div class="menu-actions">
         <ul class="menu" id="nav-bar-opts">
             <li>
+                <a (click)="view = 'form'">Formulario</a>
+            </li>
+            <li>
+                <a (click)="view = 'table'">Listado</a>
+            </li>
+            <li>
                 <a href="#0"> Control de Referencias </a>
             </li>
             <li>
@@ -25,4 +31,5 @@
     </div>
 </mat-toolbar>
 
-<app-form></app-form>
+<app-form *ngIf="view == 'form'"></app-form>
+<app-table *ngIf="view == 'table'"></app-table>
