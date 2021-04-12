@@ -1,10 +1,10 @@
 import { ThrowStmt } from '@angular/compiler';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
-import { UserLoginModel } from '../models/user-login.model';
-import { UserRegisterModel } from '../models/user-register.model';
-import { HttpService } from '../service/http-service';
-import { DateValidator } from '../Validators/DateValidator';
+import { UserLoginModel } from '../../models/user-login.model';
+import { UserRegisterModel } from '../../models/user-register.model';
+import { HttpService } from '../../service/http-service';
+import { DateValidator } from '../../Validators/DateValidator';
 
 @Component({
   selector: 'app-form',
@@ -216,6 +216,7 @@ export class FormComponent implements OnInit {
     this.sended = false;
     formDirective.resetForm();
     this.form.reset();
+    this.formFile = null;
   }
 
   onFilePicked(file){

@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { UserTableModel } from '../models/user-table.model';
+import { UserTableModel } from '../../models/user-table.model';
 
 @Component({
   selector: 'app-table',
