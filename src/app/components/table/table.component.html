@@ -25,59 +25,59 @@
             </div>
         </div>
         <div class="table-container">
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;" >
 
                 <ng-container matColumnDef="nombre">
-                    <th mat-header-cell *matHeaderCellDef> Nombre </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Nombre}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="table-column-header"> Nombre </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: center"> {{element.Nombre}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="puesto">
-                    <th mat-header-cell *matHeaderCellDef> Puesto </th>
-                    <td mat-cell *matCellDef="let element"> {{element.puesto}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="table-column-header"> Puesto </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: center"> {{element.puesto}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="area">
-                    <th mat-header-cell *matHeaderCellDef> Área </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Area}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="table-column-header"> Área </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: center"> {{element.Area}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="antiguedad">
-                    <th mat-header-cell *matHeaderCellDef> Antigüedad </th>
-                    <td mat-cell *matCellDef="let element"> {{element.antiguedad}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="table-column-header"> Antigüedad </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: center"> {{element.antiguedad}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="nss">
-                    <th mat-header-cell *matHeaderCellDef> NSS </th>
-                    <td mat-cell *matCellDef="let element"> {{element.NSS}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="table-column-header"> NSS </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: center"> {{element.NSS}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="numeroCol">
-                    <th mat-header-cell *matHeaderCellDef> NumeroCol </th>
-                    <td mat-cell *matCellDef="let element"> {{element.numeroCol}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="table-column-header"> NumeroCol </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: center"> {{element.numeroCol}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="carnet">
-                    <th mat-header-cell *matHeaderCellDef> Carnet </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Carnet}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="table-column-header"> Carnet </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: center"> {{element.Carnet}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="usuario">
-                    <th mat-header-cell *matHeaderCellDef> Usuario </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Usuario}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="table-column-header"> Usuario </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: center"> {{element.Usuario}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="telefono">
-                    <th mat-header-cell *matHeaderCellDef> Teléfono </th>
-                    <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="table-column-header" style="font-weight: bold;"> Teléfono </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: center"> {{element.telefono}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="correo">
-                    <th mat-header-cell *matHeaderCellDef> Correo </th>
-                    <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="table-column-header"> Correo </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: center"> {{element.correo}} </td>
                 </ng-container>
 
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-header-row style="background: linear-gradient(to right, rgba(204,133,1,1), rgba(255,129,0,1), rgba(255,149,0,1))" *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
         </div>
